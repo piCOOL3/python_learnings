@@ -1,0 +1,22 @@
+"add the first n numbers using dynamic programming. "
+
+
+
+
+def find_sum_using_DP_using_recursion(upperlimit):
+    " using recursion ,find the sum value"
+    " f(n) = f(n-1) + n : n > 1 , f(1) = 1  "
+    if (upperlimit <= 1):
+        return upperlimit;
+    else:
+        sum = upperlimit + find_sum_using_DP_using_recursion(upperlimit -1 );
+        " head recursion  as first recursion call taks place then the operation takes place"
+        return sum ;
+
+sum = 0;
+upperlimit = int(input("enter the upper limit of the range : "));
+sum = find_sum_using_DP_using_recursion(upperlimit);
+print("the sum of natural numbers  till upperlimit : "  + str(upperlimit) + " is  : " + str(sum) , end = " "  );
+
+
+
