@@ -5,20 +5,21 @@ def display_even(list , upperlimit):
     
     if (upperlimit < 2 ):
         return list;
-    if ((upperlimit % 2 ) != 0 ):
-        upperlimit = upperlimit -1;
     else:
-        for i in range(2,upperlimit +2 ,2):
-            list.append(i);
+            if ((upperlimit % 2 ) != 0 ):
+                upperlimit = upperlimit -1;
+            
+            for i in range(2,upperlimit +2 ,2):
+                   list.append(i);
 
-    return list;
+            return list;
 
 
 even_list = [];
 upperlimit = int(input("enter the upper limit of the range : "));
-display_even(even_list , upperlimit);
+even_list = display_even(even_list , upperlimit);
 print("the even whole numbers till upperlimit : "  +str(upperlimit) + " are : ", end = " "  );
-for i in range(0, len(list),1):
-    print(i);
+for i in range(0, len(even_list),1):
+    print(even_list[i] , end = " ");
 
 
