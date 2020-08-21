@@ -1,19 +1,26 @@
 "add the first n numbers using dynamic programming. "
 
 
+"""
+problem : sum of first n natural numbers.
+
+objective function  :  find_sum_using_DP_iteration(upperlimit) 
+                        calculate the sum of continious sum of the first n natural numbers till upper-limit.
+
+recurrance : find_sum_using_DP_iteration(upperlimit) = find_sum_using_DP_iteration(upperlimit - 1) + upperlimit
+"""
 
 
 def find_sum_using_DP_iteration(sum , upperlimit):
     " using recursion ,find the sum value"
-    " f(n) = f(n-1) + n : n > 1 , f(1) = 1  "
-    if (upperlimit <= 1):
-        sum = sum + upperlimit; 
-        return sum ;
-    else:
-        sum = sum + 1 ;
-        for state in range(2,upperlimit + 1 , 1):
-            sum+= state ;
-        return sum ;
+    " f(n) = f(n-1) + n : n >= 1 , DP(0) = 1  "
+
+    DP = [0] * (upperlimit + 1);
+    
+    for state in range(1,upperlimit + 1 , 1):
+        # DP.append(state + DP[state - 1]);
+        DP[state] = state + DP[state - 1];
+    return DP[upperlimit] ;
 
 
 sum = 0;
