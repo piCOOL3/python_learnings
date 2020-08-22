@@ -1,0 +1,9 @@
+def valid_ways(current_position ,destination):
+    "this objective function will calculate the valid ways to reach the destination from the current position"
+    if (current_position ==  destination):
+        return 1 ;
+    if (current_position > destination):
+        return 0 ;
+    else:
+        Total_valid_ways = valid_ways(current_position + 1 , destination ) + valid_ways(current_position + 2 , destination);
+        return Total_valid_ways;
