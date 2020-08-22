@@ -1,0 +1,16 @@
+def valid_ways_DP(destination):
+    "this objective function will calculate the valid ways to reach the destination from the current position"
+
+    DP = [0] * (destination + 1 );
+    DP[destination] = 1;
+    DP[destination - 1] = 1;
+
+    for state in range((destination - 2) , -1 ,-1 ):
+        DP[state] = DP[state + 1] + DP[state + 2];
+    return DP[0];
+
+step_to_climb = int(input("enter the destination , how many steps are present : "));
+total_ways  = valid_ways_DP(step_to_climb);
+print("the total unique ways to climb : " + str(step_to_climb) + " stairs is : " + str(total_ways) , end = " "  );
+
+
