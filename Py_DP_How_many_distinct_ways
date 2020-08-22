@@ -1,1 +1,33 @@
+                                                                                                                                                                   
+######################################################## RECURSIVE SOLUTION ################################################################
 
+def count_total_ways(step_to_climb):
+    " using recursion ,find the total unique ways to climp steps  "
+    " f(n) = f(n-1) + n : n >= 1 , DP(0) = 1  "
+    if (step_to_climb < 0 ):
+        return 0;
+
+    if (step_to_climb <= 1):
+        return step_to_climb;
+
+    else : 
+            total_ways = count_total_ways(step_to_climb - 1) + count_total_ways(step_to_climb - 2);
+            return total_ways;
+    
+
+step_to_climb = int(input("enter the total no of steps : "));
+total_ways  = count_total_ways(step_to_climb);
+print("the total unique ways to climb : " + str(step_to_climb) + " stairs is : " + str(total_ways) , end = " "  );
+
+
+
+######################################################## RECURSIVE SOLUTION ################################################################
+
+
+
+
+
+
+        
+        
+        
